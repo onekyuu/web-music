@@ -57,6 +57,10 @@
   margin: 5px;
   cursor: pointer;
 }
+.song-list p:hover {
+  background-color: rgba(175, 175, 175, 0.6);
+  border-radius: 5px;
+}
 .player {
   width: 70%;
   height: 50%;
@@ -148,7 +152,7 @@
   float: left;
 }
 .lyrics .next-lyric {
-  color: rgba(216, 214, 214, 0.5)
+  color: rgba(214, 214, 214, 0.5)
 }
 .album {
   padding: 0 70px 0 70px;
@@ -181,5 +185,12 @@ footer a {
 footer a i {
   margin-right: 5px;
 }
-
-
+::-webkit-scrollbar {
+  background-color: rgba(41, 41, 41, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(175, 175, 175, 0.6);
+  border-radius: 10px;
+}
+scroll
