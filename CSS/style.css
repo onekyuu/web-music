@@ -1,8 +1,9 @@
 .login ul li {
   float: left;
-  padding: 30px 10px;
+  margin: 30px 10px;
 }
-.login ul li a {
+.login ul li a,
+.login ul li a .fa {
   font-size: 20px;
 }
 .login ul a .fa {
@@ -11,6 +12,14 @@
 .login {
   float: right;
   margin-right: 10%;
+}
+.list {
+  margin: 30px;
+  float: left;
+}
+.list .fa {
+  font-size: 30px;
+  cursor: pointer;
 }
 .background {
   height: 100%;
@@ -32,6 +41,21 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
+}
+.song-list {
+  width: 13%;
+  height: 50%;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
+  background-color: rgba(73, 73, 73, 0.4);
+  overflow: auto;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+}
+.song-list p {
+  margin: 5px;
+  cursor: pointer;
 }
 .player {
   width: 70%;
@@ -64,7 +88,7 @@
    align-items: center;
  }
  .player .control .volume {
-   width: 80px;
+   width: 100px;
    height: 8px;
    background-color: #222;
    border-radius: 4px;
@@ -123,6 +147,9 @@
   font-size: 20px;  
   float: left;
 }
+.lyrics .next-lyric {
+  color: rgba(216, 214, 214, 0.5)
+}
 .album {
   padding: 0 70px 0 70px;
   background-color: rgba(73, 73, 73, 0.4);
@@ -146,6 +173,13 @@ footer {
   position: absolute;
   bottom: 0;
   right: 20px;
+  padding: 0 10px;
+}
+footer a {
+  margin: 0 10px;
+}
+footer a i {
+  margin-right: 5px;
 }
 
 
