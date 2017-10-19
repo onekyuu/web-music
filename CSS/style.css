@@ -5,6 +5,7 @@
 .login ul li a,
 .login ul li a .fa {
   font-size: 20px;
+  cursor: pointer;
 }
 .login ul a .fa {
   padding-right: 10px;
