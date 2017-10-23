@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="jquery-3.2.1.min.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,24 +18,10 @@
         <li><a href="#"><span></span>注册</a></li>
       </ul>
     </div>
-    <div class="list">
-      <span><i class="fa fa-list"></i></span>
-    </div>
   </header>
   <main>
     <div class="background"></div>
     <div class="cover"></div>
-    <!-- <div class="song-list">
-      <p>阿楚姑娘 - 袁娅维</p>
-      <p>玫瑰与小鹿 - 周深</p>
-      <p>东流 - 绯村柯北/灰老板</p>
-      <p>铭记 - 呦猫UNEKO</p>
-      <p>なんでもないや - RADWIMPS</p>
-      <p>First Love - 宇多田ヒカル</p>
-      <p>Shape of You - J.Fla</p>
-      <p>残酷な天使のテーゼ - 高橋洋子</p>
-
-    </div> -->
     <div class="player clearfix">
       <div class="show">
         <div class="img"></div>
@@ -42,12 +29,10 @@
           <span><i class="fa fa-step-backward"></i></span>
           <span><i class="fa fa-play"></i></span>
           <span><i class="fa fa-step-forward"></i></span>
-          <span><i class="fa fa-random"></i></span>
           <span><i class="fa fa-heart"></i></span>
           <div class="volume-control">
             <span><i class="fa fa-volume-up"></i></span>
             <div class="volume">
-              <div class="volume-total"></div>
               <div class="volume-now"></div>
             </div>
           </div>
@@ -64,11 +49,8 @@
             <span><i class="fa fa-music"></i>Music Webpage</span>
           </div>
           <div class="progress-bar">
-            <div>
-              <p class="time">00:00</p>
-            </div>
+            <span class="time">0:00</span>
             <div class="bar">
-              <div class="total"></div>
               <div class="current"></div>
             </div>
           </div>
@@ -83,11 +65,14 @@
       </div>
     </div>
     <div class="album clearfix">
+      <div>
+        <span class="fa fa-chevron-left"></span>
+        <span class="fa fa-chevron-right"></span>
+      </div>
       <ul>
         <li class='category'>
           <div class="category-1">
             <div class="pic">
-              <img src="http://p3.music.126.net/GhIoJt4GDH1pcDPO9BaJWw==/109951162955657454.jpg" alt="">
             </div>
             <p class="">流行</p>
           </div>
@@ -95,7 +80,6 @@
         <li class='category'>
           <div class="category-2">
             <div class="pic">
-                <img src="http://p3.music.126.net/Pg_7T9Bk4EoNBZEoSnWj6w==/18592741627655609.jpg" alt="">
             </div>
             <p class="">民谣</p>
           </div>
@@ -103,7 +87,6 @@
         <li class='category'>
           <div class="category-3">
             <div class="pic">
-                <img src="http://p3.music.126.net/_ylB-3DWYHdoliUWaTbYqg==/18789554208781033.jpg" alt="">
             </div>
             <p class="">摇滚</p>
           </div>
@@ -111,7 +94,6 @@
         <li class='category'>
           <div class="category-4">
             <div class="pic">
-                <img src="http://p3.music.126.net/EUeCrVTpFcfLhmfG5BxGpw==/18510278255627044.jpg" alt="">
             </div>
             <p class="">电子</p>
           </div>
@@ -119,7 +101,6 @@
         <li class='category'>
           <div class="category-5">
             <div class="pic">
-                <img src="http://p4.music.126.net/yV7Jn4DRHe_lP11WiVWhgA==/18731280092771161.jpg" alt="">
             </div>
             <p class="">Jazz</p>
           </div>
@@ -127,7 +108,6 @@
         <li class='category'>
           <div class="category-6">
             <div class="pic">
-                <img src="http://p3.music.126.net/6AzO3HTTvhxY4yBip_gSpA==/18659811836942944.jpg" alt="">
             </div>
             <p class="">ACG</p>
           </div>
@@ -136,7 +116,7 @@
     </div>
   </main>
   <footer>
-    <span>Copyright<i class="fa fa-copyright"></i>wky</span>
+    <span>Copyright <i class="fa fa-copyright"></i> wky</span>
     <a href=""><i class="fa fa-github"></i>GitHub</a>
     <a href=""><i class="fa fa-weibo"></i>Weibo</a>
     <a href=""><i class="fa fa-envelope-o"></i>E-mail</a>
