@@ -76,7 +76,12 @@ main {
   .player {
     width: 1200px;
   }
-} 
+}
+@media (min-width: 2000px) {
+  .player {
+    width: 1400px;
+  }
+}
 .player {
   height: 70vh;
   margin: 0 auto;
