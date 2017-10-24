@@ -61,25 +61,40 @@ main {
   .player {
     width: 600px;
   }
+  .album div {
+    width: calc(100% - 14vh)
+  }
 }
 @media (min-width: 1200px) {
   .player {
     width: 1000px;
+  }
+  .album div {
+    width: calc(100% - 14vh)
   }
 }
 @media (min-width: 1400px) {
   .player {
     width: 1200px;
   }
+  .album div {
+    width: calc(100% - 14vh)
+  }
 }
 @media (min-width: 1600px) {
   .player {
     width: 1200px;
   }
+  .album div {
+    width: calc(100% - 14vh)
+  }
 }
 @media (min-width: 2000px) {
   .player {
     width: 1400px;
+  }
+  .album div {
+    width: calc(100% - 14vh)
   }
 }
 .player {
@@ -188,6 +203,9 @@ main {
   padding: 0 10vh;
   background-color: rgba(73, 73, 73, 0.4);
   position: relative;
+  overflow: hidden;
+}
+.album div {
   overflow: hidden;
 }
 .album li:hover {
