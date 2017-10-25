@@ -1,13 +1,30 @@
 var album = {
   init: function(){
+    this.$album = $('.album')
     this.$ul = $('.album ul')
+    this.$box = $('.album .box')
+    this.$right = $('.album .fa-chevron-right')
+    this.$left = $('.album .fa-chevron-left')
+    this.isToEnd = false
+    this.isToStart = true
     this.getData()
+    this.event()
   },
   start: function(){
 
   },
   event: function(){
-
+    var me = this
+    me.$right.on('click', function(){
+      var liWidth = me.$ul.find('li').outerWidth(true)
+      var count = Math.floor(me.$box.width()/liWidth)
+      if(!me.isToEnd){
+        me.$ul.animate({
+          left: '-='+liWidth*count
+        }, 500)
+      }
+      
+    })
   },
   getData: function(){
     var me = this

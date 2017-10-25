@@ -62,7 +62,8 @@ main {
     width: 600px;
   }
   .album div {
-    width: calc(100% - 14vh)
+    width: 600px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1200px) {
@@ -70,15 +71,17 @@ main {
     width: 1000px;
   }
   .album div {
-    width: calc(100% - 14vh)
+    width: 1000px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1400px) {
   .player {
-    width: 1200px;
+    width: 1000px;
   }
   .album div {
-    width: calc(100% - 14vh)
+    width: 1200px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1600px) {
@@ -86,7 +89,8 @@ main {
     width: 1200px;
   }
   .album div {
-    width: calc(100% - 14vh)
+    width: 1400px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 2000px) {
@@ -94,7 +98,8 @@ main {
     width: 1400px;
   }
   .album div {
-    width: calc(100% - 14vh)
+    width: 1700px;
+    margin: 0 auto;
   }
 }
 .player {
@@ -200,12 +205,8 @@ main {
 .album {
   height: 30vh;
   width: 100%;
-  padding: 0 10vh;
   background-color: rgba(73, 73, 73, 0.4);
   position: relative;
-  overflow: hidden;
-}
-.album div {
   overflow: hidden;
 }
 .album li:hover {
@@ -226,20 +227,27 @@ main {
 }
 .album .fa-chevron-left {
   position: absolute;
-  left: 10vh;
+  left: 6vh;
   top: 12vh;
 }
 .album .fa-chevron-right {
   position: absolute;
-  right: 10vh;
+  right: 6vh;
   top: 12vh;
 }
 .album:hover .fa {
   opacity: 1;
 }
-.album ul {
+.album .box {
+  height: 30vh;
+  position: relative;
   overflow: hidden;
-  margin: 0 10vh;
+}
+.album ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30vh;
 }
 .album .category {
   margin: 3vh;
