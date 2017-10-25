@@ -21,9 +21,12 @@ var album = {
       if(!me.isToEnd){
         me.$ul.animate({
           left: '-='+liWidth*count
-        }, 500)
+        }, 500, function(){
+          if(me.$box.width() - parseInt(me.$ul.css('left')) >= me.$ul.width()){
+            me.isToEnd = true
+          }
+        })
       }
-      
     })
   },
   getData: function(){
