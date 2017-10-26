@@ -132,6 +132,9 @@ main {
    flex-direction: row;
    align-items: center;
  }
+ .player .control .collected {
+   color: red;
+ }
  .player .control .volume {
    width: 10vh;
    height: 0.8vh;
@@ -145,7 +148,7 @@ main {
    background-color: #999;
    border-radius: 0.5vh;
  }
- .player .control .volume-control .fa {
+ .player .control .volume-control .iconfont {
    font-size: 3.5vh;
    margin-right: 1.5vh;
    cursor: pointer;
@@ -184,20 +187,24 @@ main {
   height: 1vh;
   background-color: #222;
   border-radius: 0.5vh;
-  margin: 6vh 0 6vh 2vh;
+  margin: 6vh 2vh;
   cursor: pointer;
   position: relative;
 }
 .progress-bar .bar .current {
-  width: 10%;
+  width: 0;
   height: 1vh;
   background-color: #999;
   border-radius: 0.5vh;
   position: relative;
+  transition: width 0.8s
 }
 .progress-bar .time {
   font-size: 2vh;
   float: left;
+}
+.progress-bar .total-time {
+  font-size: 2vh;
 }
 .lyrics .next-lyric {
   color: rgba(214, 214, 214, 0.5)
