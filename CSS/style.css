@@ -206,8 +206,8 @@ main {
 .progress-bar .total-time {
   font-size: 2vh;
 }
-.lyrics .next-lyric {
-  color: rgba(214, 214, 214, 0.5)
+.lyrics {
+  margin-top: 2vh;
 }
 .album {
   height: 30vh;

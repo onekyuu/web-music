@@ -73,7 +73,7 @@ var album = {
   getData: function(){
     var me = this
     $.ajax({
-      url: 'https://jirenguapi.applinzi.com/fm/getChannels.php',
+      url: '//jirenguapi.applinzi.com/fm/getChannels.php',
       type: 'GET',
       dataType: 'jsonp'
     }).done(function(ret){
@@ -207,7 +207,9 @@ var player = {
       },
       dataType: 'jsonp'
     }).done(function(ret){
+      console.log(ret)
       me.loadMusic(ret.song[0])
+      me.loadLyric(ret.song[0].sid)
       me.update()
     }).fail(function(){
       console.log('error')
@@ -221,6 +223,26 @@ var player = {
     this.$play.find('.show-pic .img').css('background-image', 'url('+songData.picture+')')
     this.$main.find('.background').css('background-image', 'url('+songData.picture+')')
     this.$play.find('.control .play-btn').addClass('fa-pause').removeClass(' fa-play')
+  },
+  loadLyric: function(sid){
+    var me = this
+    console.log(sid)
+    $.getJSON('//jirenguapi.applinzi.com/fm/getLyric.php',{sid: sid})
+    .done(function(ret){
+      me.lyricObj = {}
+      var lyricStr = ret.lyric.split('\n')
+      lyricStr.forEach(function(line){
+        var times = line.match(/\d{2}:\d{2}/g)
+        var str = line.replace(/\[.+?\]/g, '')
+        if(Array.isArray(times)){
+          times.forEach(function(time){
+            me.lyricObj[time] = str
+          })
+        }
+      })
+    }).fail(function(){
+      console.log('error')
+    })
   },
   update: function(){
     var me = this
@@ -238,9 +260,15 @@ var player = {
     me.$totalTime.text(totalStr)
     var current = Math.floor(me.audio.currentTime/player.audio.duration*100)+'%'
     me.$current.css({width: current})
+    me.setLyric(str)
   },
-  render: function(){
-
+  setLyric: function(time){
+    var me = this
+    var lyricStr = me.lyricObj[time]
+    if(lyricStr){
+      me.$play.find('.handle .lyrics .lyric').text(lyricStr)
+    }
+    console.log(me.lyricObj[time])
   }
 }
 
