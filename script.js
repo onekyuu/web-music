@@ -86,6 +86,13 @@ var album = {
   createNode: function(data){
     var me = this
     var template = ''
+    data.channels.unshift({
+      channel_id: 0,
+      name: '我的收藏',
+      cover_small: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-small',
+      cover_middle: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-middle',
+      cover_big: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-big',
+    })
     data.channels.forEach(function(album){
       template += '<li class="category" data_id="'+album.channel_id+'"'+' data_name="'+album.name+'">'+
                     '<div class="pic" style="background-image:url('+album.cover_small+')">'+
@@ -196,17 +203,12 @@ var player = {
   playInit: function(){
     var me = this
     me.audio.volume = 0.5
+    me.getData()
   },
   getData: function(){
     var me = this
-    $.ajax({
-      url: 'https://jirenguapi.applinzi.com/fm/getSong.php',
-      type: 'GET',
-      data: {
-        channel: me.channelId
-      },
-      dataType: 'jsonp'
-    }).done(function(ret){
+   $.getJSON('//jirenguapi.applinzi.com/fm/getSong.php',{channel: me.channelId})
+    .done(function(ret){
       console.log(ret)
       me.loadMusic(ret.song[0])
       me.loadLyric(ret.song[0].sid)
