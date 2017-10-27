@@ -108,7 +108,7 @@ main {
   padding-top: 15vh;
   position: relative;
 }
-.player .show {
+.player .show-pic {
   float: left;
   margin-left: 10vh;
 }
@@ -143,7 +143,7 @@ main {
    cursor: pointer;
  }
  .player .control .volume-now {
-   width: 80%;
+   width: 50%;
    height: 0.8vh;
    background-color: #999;
    border-radius: 0.5vh;
@@ -197,7 +197,7 @@ main {
   background-color: #999;
   border-radius: 0.5vh;
   position: relative;
-  transition: width 0.8s
+  transition: width 1s
 }
 .progress-bar .time {
   font-size: 2vh;

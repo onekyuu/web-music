@@ -112,13 +112,17 @@ var player = {
     this.$play = $('.player')
     this.$main = $('main')
     this.$playBtn = $('.player').find('.control .play-btn')
-    this.$volumeBtn = $('.player').find('.control .volume-btn')
     this.$like = $('.player').find('.control .collect')
     this.$time = $('.player').find('.handle .time')
     this.$totalTime = $('.player').find('.handle .total-time')
+    this.$progress = $('.player').find('.handle .bar')
     this.$current = $('.player').find('.handle .current')
+    this.$volume = $('.player').find('.show-pic .volume-control .volume')
+    this.$volumeBtn = $('.player').find('.show-pic .volume-control .volume-btn')
     this.audio = new Audio()
     this.audio.autoplay = true
+    this.$volumeNow = 0.5
+    this.playInit()
     this.event()
   },
   event: function(){
@@ -145,13 +149,6 @@ var player = {
         me.audio.pause()
       }
     })
-    me.$volumeBtn.on('click', function(){
-      if(me.$volumeBtn.hasClass('icon-jingyin')){
-        me.$volumeBtn.removeClass('icon-jingyin').addClass('icon-yinliang')
-      }else{
-        me.$volumeBtn.removeClass('icon-yinliang').addClass('icon-jingyin')
-      }
-    })
     me.$like.on('click', function(){
       if(me.$like.hasClass('collected')){
         me.$like.removeClass('collected')
@@ -170,10 +167,35 @@ var player = {
     me.audio.addEventListener('pause', function(){
       clearInterval(me.clock)
     })
-    me.audio.addEventListener('end', function(){
+    me.audio.addEventListener('ended', function(){
       me.getData()
     })
-
+    //控制进度条
+    me.$progress.on('click', function(e){
+      me.$current.css('width', e.offsetX+'px')
+      me.audio.currentTime = e.offsetX/me.$progress.width()*me.audio.duration
+    })
+    //音量控制
+    me.$volume.on('click', function(e){
+      me.$volumeNow = e.offsetX/me.$volume.width()
+      me.$volume.find('.volume-now').css('width', e.offsetX+'px')
+      me.audio.volume = me.$volumeNow
+    })
+    me.$volumeBtn.on('click', function(){
+      if(me.$volumeBtn.hasClass('icon-jingyin')){
+        me.$volumeBtn.removeClass('icon-jingyin').addClass('icon-yinliang')
+        me.audio.volume = me.$volumeNow
+        me.$volume.find('.volume-now').css('width',       me.$volumeNow*me.$volume.width()+'px')
+      }else{
+        me.$volumeBtn.removeClass('icon-yinliang').addClass('icon-jingyin')
+        me.audio.volume = 0
+        me.$volume.find('.volume-now').css('width', 0)
+      }
+    })
+  },
+  playInit: function(){
+    var me = this
+    me.audio.volume = 0.5
   },
   getData: function(){
     var me = this
@@ -185,7 +207,6 @@ var player = {
       },
       dataType: 'jsonp'
     }).done(function(ret){
-      me.song = ret.song[0]
       me.loadMusic(ret.song[0])
       me.update()
     }).fail(function(){
@@ -197,7 +218,7 @@ var player = {
     this.audio.src = songData.url
     this.$play.find('.handle .title').text(songData.title)
     this.$play.find('.handle .songer').text(songData.artist)
-    this.$play.find('.show .img').css('background-image', 'url('+songData.picture+')')
+    this.$play.find('.show-pic .img').css('background-image', 'url('+songData.picture+')')
     this.$main.find('.background').css('background-image', 'url('+songData.picture+')')
     this.$play.find('.control .play-btn').addClass('fa-pause').removeClass(' fa-play')
   },
@@ -209,13 +230,10 @@ var player = {
     sec = sec.length<2?'0'+sec:sec
     var str = min+':'+sec
     me.$time.text(str)
-    var totalMin = ''+Math.floor(me.audio.duration/60)
-    var totalSec = Math.floor(me.audio.duration%60)+''
+    var totalMin = ''+Math.floor((me.audio.duration || 0) / 60)
+    var totalSec = Math.floor((me.audio.duration || 0) % 60)+''
     totalMin = totalMin.length<2?'0'+totalMin:totalMin
     totalSec = totalSec.length<2?'0'+totalSec:totalSec
-    console.log(me.audio.duration)
-    console.log('min', totalMin)
-    console.log('sec', totalSec)
     var totalStr = totalMin+':'+totalSec
     me.$totalTime.text(totalStr)
     var current = Math.floor(me.audio.currentTime/player.audio.duration*100)+'%'
