@@ -86,6 +86,7 @@ var album = {
   createNode: function(data){
     var me = this
     var template = ''
+    /*
     data.channels.unshift({
       channel_id: 0,
       name: '我的收藏',
@@ -93,6 +94,7 @@ var album = {
       cover_middle: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-middle',
       cover_big: 'http://cloud.hunger-valley.com/17-10-24/1906806.jpg-big',
     })
+    */
     data.channels.forEach(function(album){
       template += '<li class="category" data_id="'+album.channel_id+'"'+' data_name="'+album.name+'">'+
                     '<div class="pic" style="background-image:url('+album.cover_small+')">'+
