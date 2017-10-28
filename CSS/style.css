@@ -125,6 +125,10 @@ main {
  }
  .player .control {
    margin-top: 5vh;
+   display: flex;
+ }
+ .player .control span {
+   flex: 1;
  }
  .player .control .volume-control {
    float: right;
