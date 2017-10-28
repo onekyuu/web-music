@@ -238,6 +238,7 @@ var player = {
       lyricStr.forEach(function(line){
         var times = line.match(/\d{2}:\d{2}/g)
         var str = line.replace(/\[.+?\]/g, '')
+        str = str.replace(/by 饥人谷/g, '')
         if(Array.isArray(times)){
           times.forEach(function(time){
             me.lyricObj[time] = str
