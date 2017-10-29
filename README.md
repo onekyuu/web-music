@@ -40,5 +40,9 @@
       }
     }
    ```
-   ##### 3.
+##### 3.播放模块
+1. * 播放模块按钮交互
+   * 此部分功能多由监听``` click ```事件触发，由于之前音乐播放器的工作，在此不再赘述
+2. * 歌词显示
+   * 通过AJAX获取的歌词是一个对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric.png)此对象中包含三个属性：歌词、曲名以及歌曲ID，而歌词部分对应的值为一串字符串
 
