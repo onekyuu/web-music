@@ -18,4 +18,6 @@
 ### 三、效果展示
 ![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/show.png)
 ### 四、难点&问题&解决
-1. 
+#####1.专辑栏滚动功能
+1. * 专辑栏由AJAX获取数据后通过操作DOM节点创建在页面上，通过CSS设置浮动使各个专辑横向排列，但其父元素宽度无法确定会导致超出父元素宽度的部分换行继续排列 * 解决办法：通过JS设置父元素宽度
+
