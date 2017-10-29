@@ -44,5 +44,5 @@
 1. * 播放模块按钮交互
    * 此部分功能多由监听``` click ```事件触发，由于之前音乐播放器的工作，在此不再赘述
 2. * 歌词显示
-   * 通过AJAX获取的歌词是一个对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric.png)此对象中包含三个属性：歌词、曲名以及歌曲ID，而歌词部分对应的值为一串字符串，因此通过字符串的操作以及正则表达式可以将lyric拆分组合为只包含时间数字和只包含歌词的两个数组，再将两个数组组合为以时间为属性，以歌词为值的对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric1.png)在拼接DOM时就可以通过当前播放时间调用歌词并显示
+   * 通过AJAX获取的歌词是一个对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric.png)此对象中包含三个属性：歌词、曲名以及歌曲ID，而歌词部分对应的值为一串字符串，因此通过字符串的操作以及正则表达式可以将lyric拆分组合为只包含时间数字和只包含歌词的两个数组，再将两个数组组合为以时间为key，以歌词为value的对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric1.png)在拼接DOM时就可以通过当前播放时间调用歌词并显示
 
