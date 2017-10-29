@@ -45,4 +45,5 @@
    * 此部分功能多由监听``` click ```事件触发，由于之前音乐播放器的工作，在此不再赘述
 2. * 歌词显示
    * 通过AJAX获取的歌词是一个对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric.png)此对象中包含三个属性：歌词、曲名以及歌曲ID，而歌词部分对应的值为一串字符串，因此通过字符串的操作以及正则表达式可以将lyric拆分组合为只包含时间数字和只包含歌词的两个数组，再将两个数组组合为以时间为key，以歌词为value的对象![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/lyric1.png)在拼接DOM时就可以通过当前播放时间调用歌词并显示
-
+### 五、总结
+本项目作为不存在滚动条的全屏单页web应用，适用于大屏展示，在项目实现过程中，综合了之前完成的音乐播放器的成果，完成了更多的效果，在这个过程中加强了对面向对象编程思想的理解，更熟练了对jQuery的使用，其中还涉及到CSS的flex布局、JS基本操作、正则表达式等的使用。由于本人仍在学习过程中，难免出现一些问题，如果您有意见或建议，还请不吝赐教:)
