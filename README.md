@@ -28,8 +28,8 @@
 ![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/album2.png)
    * 解决办法：计算得到当前显示区所显示的完整元素个数，每次滚动只滚动完整元素的总长度，当前显示不完整的元素就可以完整的显示在下一页的开始
 ##### 2.专辑模块与播放模块的信息交互
-   * 由于播放模块需要用户点击专辑元素后播放本专辑下的歌曲，基于API接口的要求，需要将专辑的 ``` channel_id ``` 传递给播放模块，播放模块在请求歌曲数据时将 ``` channel_id ``` 作为数据发送
-   * 解决办法：使用jQuery自定义事件
+* 由于播放模块需要用户点击专辑元素后播放本专辑下的歌曲，基于API接口的要求，需要将专辑的 ``` channel_id ``` 传递给播放模块，播放模块在请求歌曲数据时将 ``` channel_id ``` 作为数据发送
+* 解决办法：使用jQuery自定义事件
    ``` 
     var eventCenter = {
       on: function(type, handler){
