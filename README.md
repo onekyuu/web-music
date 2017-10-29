@@ -16,6 +16,6 @@
 2. player对象中各个函数的作用：init函数-初始化，event函数-绑定事件，playInit函数-播放音乐初始化，getData函数-获取数据，loadMusic函数-展示音乐信息，loadLyric函数-获取歌词，update函数-更新进度条及播放时间，setLyric函数-展示歌词
 3. 两个功能区块间互不干扰，但是由于播放用户点击的专辑中的歌曲时需要获取用户点击的专辑ID，所以使用eventCenter自定义事件，实现功能模块间的信息传递
 ### 三、效果展示
-[](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/show.png)
+![](https://raw.githubusercontent.com/wky0615/MarkdownPhotos/master/web-music/show.png)
 ### 四、难点&问题&解决
 1. 
