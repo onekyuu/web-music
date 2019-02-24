@@ -2,17 +2,23 @@ main {
   width: 100%;
   height: 100%;
 }
+#app {
+  display: none;
+}
 .login ul li {
   float: left;
   margin: 0 1vh;
 }
-.login ul li a,
-.login ul li a .fa {
+.login ul li,
+.login ul li .fa {
   font-size: 2vh;
   cursor: pointer;
 }
-.login ul a .fa {
+.login ul .fa {
   padding-right: 1vh;
+}
+.login ul .login-list {
+  display: none;
 }
 .login {
   float: right;

@@ -1,0 +1,176 @@
+@media (max-width: 768px) {
+  body {
+    width: 100vw;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  header {
+    position: relative;
+  }
+  header .login ul li {
+    display: none;
+  }
+  header .login ul .login-list {
+    display: block;
+  }
+  .login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  header .login ul li.login-list .fa {
+    font-size: 20px;
+  }
+
+  footer {
+    display: none;
+  }
+  .background {
+    display: none;
+  }
+  .cover {
+    display: none;
+  }
+  .player {
+    display: none;
+  }
+  .album {
+    display: none;
+  }
+  #app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  #app .bg {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(http://p4.music.126.net/X4c1HN04ywwj7svDYT0DLQ==/109951163071679251.jpg) no-repeat transparent;
+    opacity: 1;
+    background-size: cover;
+    background-position: 50%;
+    position: absolute;
+    z-index: -1;
+    /* transform: scale(1.5); */
+    transform-origin: center top;
+  }
+  #app .bg::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+  }
+  #app .disc-container {
+    position: relative;
+  }
+  #app .point {
+    width: 26vw;
+    position: absolute;
+    left: 45vw;
+  }
+  #app .ring {
+    width: 82vw;
+  }
+  #app .light {
+    width: 82vw;
+    position: absolute;
+    display: block;
+  }
+  #app .m-cover {
+    width: 50vw;
+    position: absolute;
+    border-radius: 50%;
+    display: block;
+  }
+  #app .pause.pausing {
+    width: 15vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+  }
+  #app .pause {
+    display: none;
+  }
+  #app .disc-container .light,
+  #app .disc-container .cover {
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
+  }
+  #app .disc-container.playing .light,
+  #app .disc-container.playing .cover {
+    animation-play-state: running;
+  }
+  #app .disc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 19vw;
+  }
+
+  #app .song-details {
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 5vw;
+  }
+  #app .song-details .stitle,
+  #app .song-details .dash {
+    font-size: 4.3vw;
+    color: #fefefe;
+    line-height: 1.1;
+  }
+  #app .song-details .stitle span {
+    font-size: 3.9vw;
+    color: rgba(250, 250, 250, 0.6);
+  }
+  #app .song-details p {
+    font-size: 3.9vw;
+    color: rgba(250, 250, 250, 0.6);
+    line-height: 7.7vw;
+  }
+  #app .song-details .lines {
+    transition: transform 0.3s;
+  }
+  #app .song-details .lines p.active {
+    color: #fff; 
+  }
+  #app .song-details .lyric {
+    margin-top: 3.4vw;
+    height: 23vw;
+    overflow: hidden;
+  }
+  #app .lyric p.active {
+    color: #fefefe;
+  }
+
+  #app .m-album .box ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #app .m-album .box ul li {
+    width: 30vw;
+  }
+  #app .m-album .pic {
+    width: 30vw;
+    height: 30vw;
+  }
+}

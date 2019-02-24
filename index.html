@@ -10,14 +10,16 @@
   <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">  
   <link rel="stylesheet" href="CSS/common.css">
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/m-style.css">
   <title>MMMMMMusic</title>
 </head>
 <body>
   <header>
     <div class="login">
       <ul>
-        <li><a href="#"><span><i class="fa fa-user"></i></span>登录</a></li>
-        <li><a href="#"><span></span>注册</a></li>
+        <li><span><i class="fa fa-user"></i></span>登录</li>
+        <li><span></span>注册</li>
+        <li class="login-list"><span><i class="fa fa-list"></i></span></li>
       </ul>
     </div>
   </header>
@@ -62,53 +64,37 @@
         </div>
       </div>
     </div>
+    <div class="page" id="app">
+      <div class="bg"></div>
+      <div class="disc-container">
+        <img class="point" src="https://s3.music.126.net/m/s/img/needle-plus.png?994aa910ce3e4d242eb7076620b0e502" alt="">
+        <div class="disc">
+          <img src="https://s3.music.126.net/m/s/img/play_btn_3x.png?4da7e135b7c089f3777ec5cdbbb3a8d8" alt="" class="pause">
+          <img src="https://s3.music.126.net/m/s/img/disc-plus.png?b700b62e1971b351dcb8b8ce1c9ceea3" alt="" class="ring">
+          <img src="https://s3.music.126.net/m/s/img/disc_light-plus.png?4392c8c9a8a33d4b2b2c33d3995503c9" alt="" class="light">
+          <img src="https://s3.music.126.net/m/s/img/disc_default.png?7c9b3adc16f5485c2bfbe8a540534188" alt="" class="m-cover">
+        </div>
+      </div>
+      <div class="song-details">
+        <p><span class="stitle">歌曲名</span><span class="dash"> - </span><span class="singer">演唱者</span></p>
+        <div class="lyric">
+          <div class="lines">
+  
+          </div>
+        </div>
+      </div>
+      <div class="m-album clearfix">
+        <div class="box">
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="album clearfix">
       <span class="fa fa-chevron-left"></span>
       <span class="fa fa-chevron-right"></span>
       <div class="box">
         <ul>
-          <!-- <li class='category'>
-            <div class="category-1">
-              <div class="pic">
-              </div>
-              <p class="">流行</p>
-            </div>
-          </li>
-          <li class='category'>
-            <div class="category-2">
-              <div class="pic">
-              </div>
-              <p class="">民谣</p>
-            </div>
-          </li>
-          <li class='category'>
-            <div class="category-3">
-              <div class="pic">
-              </div>
-              <p class="">摇滚</p>
-            </div>
-          </li>
-          <li class='category'>
-            <div class="category-4">
-              <div class="pic">
-              </div>
-              <p class="">电子</p>
-            </div>
-          </li>
-          <li class='category'>
-            <div class="category-5">
-              <div class="pic">
-              </div>
-              <p class="">Jazz</p>
-            </div>
-          </li>
-          <li class='category'>
-            <div class="category-6">
-              <div class="pic">
-              </div>
-              <p class="">ACG</p>
-            </div>
-          </li> -->
         </ul>
       </div>
     </div>

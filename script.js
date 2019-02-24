@@ -8,12 +8,12 @@ var eventCenter = {
   }
 }
 
-
 //专辑模块
 var album = {
   init: function(){
     this.$album = $('.album')
     this.$ul = $('.album ul')
+    this.$m_album = $('.m-album ul')
     this.$box = $('.album .box')
     this.$right = $('.album .fa-chevron-right')
     this.$left = $('.album .fa-chevron-left')
@@ -103,6 +103,7 @@ var album = {
                   '</li>'
     })
     me.$ul.html(template)
+    me.$m_album.html(template)
     this.setWidth()
   },
   //设置专辑列表长度
@@ -276,8 +277,6 @@ var player = {
     console.log(me.lyricObj[time])
   }
 }
-
-
 
 album.init()
 player.init()
