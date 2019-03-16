@@ -1,9 +1,199 @@
-main {
-  width: 100%;
-  height: 100%;
+@media screen and (min-width: 768px) {
+  header .details {
+    display: none;
+  }
+  header .login .login-list {
+    display: none;
+  }
+  main {
+    width: 100%;
+    height: 100%;    
+  }
+  .disc-container {
+    display: none;
+  }
+  main .player {
+    height: 70vh;
+  }
+  .album {
+    height: 30vh;
+    width: 100%;
+    background-color: rgba(73, 73, 73, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .m-album {
+    display: none;
+  }
 }
-#app {
-  display: none;
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    height: 5vh;
+    align-items: center;
+  }
+  header .login {
+    margin: 0 0 0 2vw;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+  }
+  header .login ul {
+    display: none;
+  }
+  header .login .login-list .fa-list {
+    font-size: 24px;
+  }
+  header .login .login-list {
+    display: block;
+  }
+  header .details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin-left: 4vw;
+    overflow: hidden;
+  }
+  header .login .details .title,
+  header .login .details .songer {
+    font-size: 14px;
+    font-weight: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  header .login .details .title {
+    padding: 0;
+    margin-right: 2vw;
+  }
+  main {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  main .background {
+    height: 100vh;
+  }
+
+  .disc-container {
+    position: relative;
+  }
+  .point {
+    width: 26vw;
+    position: absolute;
+    left: 45vw;
+    top: 0;
+  }
+  .ring {
+    width: 82vw;
+  }
+  .light {
+    width: 82vw;
+    position: absolute;
+    display: block;
+  }
+  .m-cover {
+    width: 50vw;
+    position: absolute;
+    border-radius: 50%;
+    display: block;
+  }
+  .pause.pausing {
+    width: 15vw;
+    position: absolute;
+    z-index: 2;
+    display: block;
+  }
+  .pause {
+    display: none;
+  }
+  .disc-container .light,
+  .disc-container .m-cover {
+    animation: circle 20s infinite linear;
+    animation-play-state: paused;
+  }
+  .disc-container.playing .light,
+  .disc-container.playing .m-cover {
+    animation-play-state: running;
+  }
+  .disc {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 19vw;
+  }
+  main .player {
+    margin: 0 5vw;
+    padding-top: 0;
+  }
+  .show-pic {
+    display: none;
+  }
+  .handle .details {
+    display: none;
+  }
+  .handle .like {
+    display: none;
+  }
+  /* .handle .lyrics {
+    display: none;
+  }
+  .handle .m-lyric {
+    display: block;
+    margin-top: 2vh;
+    height: 20vh;
+    overflow: hidden;
+  } */
+  .player .handle{
+    margin: 0;
+  }
+  main .album {
+    display: none;
+  }
+  /* main .m-album .box {
+    height: 100vh;
+    overflow-y: scroll;
+  } */
+  main .m-album .box ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    list-style: none;
+    justify-content: space-around
+  }
+  .m-album li:hover {
+    box-shadow: 0 0 .5vh .5vh rgba(146, 146, 146, 0.8);
+  }
+  .m-album li.active{
+    box-shadow: 0 0 .5vh .5vh rgba(146, 146, 146, 0.8);
+  }
+  .m-album .category {
+    margin: 3vh;
+    text-align: center;
+    cursor: pointer;
+  }
+  .m-album .category .pic {
+    height: 20vh;
+    width: 20vh;
+    background: url(http://p3.music.126.net/GhIoJt4GDH1pcDPO9BaJWw==/109951162955657454.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .album .category p {
+    margin-top: 0.5vh;
+  }
+  footer {
+    display: none;
+  }
 }
 .login ul li {
   float: left;
@@ -109,7 +299,6 @@ main {
   }
 }
 .player {
-  height: 70vh;
   margin: 0 auto;
   padding-top: 15vh;
   position: relative;
@@ -219,13 +408,11 @@ main {
 .lyrics {
   margin-top: 2vh;
 }
-.album {
-  height: 30vh;
-  width: 100%;
-  background-color: rgba(73, 73, 73, 0.4);
-  position: relative;
-  overflow: hidden;
+
+.m-lyric {
+  display: none;
 }
+
 .album li:hover {
   box-shadow: 0 0 .5vh .5vh rgba(146, 146, 146, 0.8);
 }

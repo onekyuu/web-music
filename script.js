@@ -12,9 +12,11 @@ var eventCenter = {
 var album = {
   init: function(){
     this.$album = $('.album')
+    this.$mAlbum = $('.m-album')
     this.$ul = $('.album ul')
-    this.$m_album = $('.m-album ul')
+    this.$mUl = $('.m-album ul')
     this.$box = $('.album .box')
+    this.$mBox = $('.m-album .box')
     this.$right = $('.album .fa-chevron-right')
     this.$left = $('.album .fa-chevron-left')
     this.isToEnd = false
@@ -69,6 +71,12 @@ var album = {
       //使用自定义事件传递专辑信息
       eventCenter.fire('select', channel_id = $(this).attr('data_id'))
     })
+    me.$mUl.on('click', 'li', function(){
+      $(this).addClass('active').siblings().removeClass('active')
+
+      //使用自定义事件传递专辑信息
+      eventCenter.fire('select', channel_id = $(this).attr('data_id'))
+    })
   },
   getData: function(){
     var me = this
@@ -103,7 +111,7 @@ var album = {
                   '</li>'
     })
     me.$ul.html(template)
-    me.$m_album.html(template)
+    me.$mUl.html(template)
     this.setWidth()
   },
   //设置专辑列表长度
@@ -119,7 +127,10 @@ var album = {
 //播放器模块
 var player = {
   init: function(){
+    this.$header = $('header')
     this.$play = $('.player')
+    this.$mContainer = $('.disc-container')
+    this.$m_cover = $('.disc-container').find('.m-cover')
     this.$main = $('main')
     this.$playBtn = $('.player').find('.control .play-btn')
     this.$like = $('.player').find('.control .collect')
@@ -166,6 +177,27 @@ var player = {
         me.$like.addClass('collected')
       }
     })
+    me.$mContainer.on('click', function(){
+      if(me.audio.paused) {
+        me.audio.play()
+        $('.pause').removeClass('pausing')
+        $('.disc-container').addClass('playing')
+      }else{
+        me.audio.pause()
+        $('.pause').addClass('pausing')
+        $('.disc-container').removeClass('playing')
+      }
+    })
+    
+    // audio.oncanplay = function(){
+    //   $('.disc-container').addClass('playing')
+    // }
+    // 
+    // $('.cover').attr("src", cover)
+    // setInterval(()=>{
+    //   let time = audio.currentTime
+    //   setLyric(time)
+    // }, 500)
     
     //绑定歌曲信息更新
     me.audio.addEventListener('play', function(){
@@ -207,12 +239,14 @@ var player = {
     var me = this
     me.audio.volume = 0.5
     me.getData()
+    me.audio.oncanplay = function(){
+      $('.disc-container').addClass('playing')
+    }
   },
   getData: function(){
     var me = this
    $.getJSON('//jirenguapi.applinzi.com/fm/getSong.php',{channel: me.channelId})
     .done(function(ret){
-      console.log(ret)
       me.loadMusic(ret.song[0])
       me.loadLyric(ret.song[0].sid)
       me.update()
@@ -225,9 +259,13 @@ var player = {
     this.audio.src = songData.url
     this.$play.find('.handle .title').text(songData.title)
     this.$play.find('.handle .songer').text(songData.artist)
+    this.$header.find('.details .title').text(songData.title)
+    this.$header.find('.details .songer').text(songData.artist)
     this.$play.find('.show-pic .img').css('background-image', 'url('+songData.picture+')')
     this.$main.find('.background').css('background-image', 'url('+songData.picture+')')
     this.$play.find('.control .play-btn').addClass('fa-pause').removeClass(' fa-play')
+    // $('.bg').css("background-image", "url("+"'"+cover+"'"+")")
+    this.$m_cover.attr("src", songData.picture)
   },
   loadLyric: function(sid){
     var me = this

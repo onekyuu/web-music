@@ -12,11 +12,11 @@ a {
 ul {
   list-style: none;
 }
-html, body, main {
+html, body {
   height: 100%;
 }
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .clearfix::after {
   content: '';

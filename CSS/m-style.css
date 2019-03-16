@@ -14,6 +14,19 @@
       transform: rotate(360deg);
     }
   }
+
+  @keyframes slideToTop {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-192px);
+    }
+  }
+
+  main {
+    overflow-y: scroll; 
+  }
   header {
     position: relative;
   }
@@ -78,13 +91,17 @@
     background: rgba(0, 0, 0, 0.7);
     width: 100vw;
   }
-  #app .disc-container {
+  #app .container {
+    height: calc(100vh - 36px);
+  }
+  #app .container .disc-container {
     position: relative;
   }
   #app .point {
     width: 26vw;
     position: absolute;
     left: 45vw;
+    z-index: 10;
   }
   #app .ring {
     width: 82vw;
@@ -122,7 +139,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 19vw;
+    padding-top: 19vw;
   }
 
   #app .song-details {
@@ -160,14 +177,38 @@
     color: #fefefe;
   }
 
+  #app .m-album {
+    padding: 0 10px;
+    overflow-y: scroll;
+    height: 140vw;
+  }
+
+  #app .m-album .pulldown {
+    height: 24px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  #app .m-album .pulldown img {
+    animation: slideToTop 5s infinite linear;
+    animation-play-state: running;
+  }
+
   #app .m-album .box ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex: 1;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   #app .m-album .box ul li {
     width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
   }
   #app .m-album .pic {
     width: 30vw;
