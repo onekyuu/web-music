@@ -172,24 +172,24 @@
     justify-content: space-around
   }
   .m-album li:hover {
-    box-shadow: 0 0 .5vh .5vh rgba(146, 146, 146, 0.8);
+    box-shadow: 0 0 .5vw .5vw rgba(146, 146, 146, 0.8);
   }
   .m-album li.active{
-    box-shadow: 0 0 .5vh .5vh rgba(146, 146, 146, 0.8);
+    box-shadow: 0 0 .5vw .5vw rgba(146, 146, 146, 0.8);
   }
   .m-album .category {
-    margin: 3vh;
+    margin: 3vw;
     text-align: center;
     cursor: pointer;
   }
   .m-album .category .pic {
-    height: 20vh;
-    width: 20vh;
+    height: 36vw;
+    width: 36vw;
     background: url(http://p3.music.126.net/GhIoJt4GDH1pcDPO9BaJWw==/109951162955657454.jpg) no-repeat center;
     background-size: cover;
   }
   .album .category p {
-    margin-top: 0.5vh;
+    margin-top: 2vw;
   }
   footer {
     display: none;
